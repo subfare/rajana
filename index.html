@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>♡</title>
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="bg-effects"></div>
+
+<!-- INTRO -->
+<div class="screen active" id="intro">
+  <h1 id="typeText"></h1>
+
+  <div class="bubble-container">
+    <button class="bubble" onclick="goLove()">hei christer!!</button>
+    <button class="bubble danger" onclick="goFail()">hadet</button>
+  </div>
+</div>
+
+<!-- FAIL -->
+<div class="screen" id="fail">
+  <h1>:-(</h1>
+  <p>Det var ikke helt det jeg håpet på...</p>
+  <button class="bubble" onclick="restart()">prøv på nytt…</button>
+</div>
+
+<!-- LOVE -->
+<div class="screen" id="love">
+  <h1 class="love-text">Jeg elsker deg</h1>
+
+  <div class="bubble-container">
+    <button class="bubble" onclick="goLetters()">jeg elsker deg også</button>
+    <button class="bubble danger" onclick="goFail()">jeg tror faktisk ikke at jeg elsker deg</button>
+  </div>
+</div>
+
+<!-- LETTERS -->
+<div class="screen" id="letters">
+  <div class="letter-box">
+    <h2 id="letterTitle"></h2>
+    <p id="letterText"></p>
+
+    <div class="nav">
+      <button onclick="prevLetter()">← Forrige</button>
+      <button onclick="nextLetter()" id="nextBtn">Neste →</button>
+    </div>
+  </div>
+</div>
+
+<!-- FINAL -->
+<div class="screen" id="final">
+  <h1 id="finalText"></h1>
+
+  <div class="photo-placeholder">
+    <p>📸 bilde kommer her</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
