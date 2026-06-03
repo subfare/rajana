@@ -13,7 +13,7 @@ function show(screen) {
   screens[screen].classList.add("active");
 }
 
-/* INTRO typing */
+/* typing intro */
 const introText = "Hei Rajana";
 let i = 0;
 
@@ -43,31 +43,20 @@ function goLetters() {
   show("letters");
   loadLetter(0);
   spawnAmbient();
-  spawnConfettiOnce();
 }
 
 /* letters */
 const letters = [
 `Brev 1\n\nDette er starten på alt.`,
-
 `Brev 2\n\nJeg vet ikke helt hvordan jeg skal si dette.`,
-
 `Brev 3\n\nMen jeg liker deg mer enn jeg burde.`,
-
 `Brev 4\n\nNoe med deg føles riktig.`,
-
 `Brev 5\n\nJeg tenker på deg ofte.`,
-
 `Brev 6\n\nLitt for ofte.`,
-
 `Brev 7\n\nMen jeg vil ikke stoppe.`,
-
 `Brev 8\n\nDu gjør alt bedre.`,
-
 `Brev 9\n\nSelv vanlige dager.`,
-
 `Brev 10\n\nJeg forstår mer nå.`,
-
 `Brev 11\n\nOg jeg vil ikke miste dette.`
 ];
 
@@ -79,8 +68,6 @@ function loadLetter(index) {
 
   document.getElementById("nextBtn").innerText =
     index === letters.length - 1 ? "Så, hva prøver du å si?" : "Neste →";
-
-  localStorage.setItem("letterIndex", index);
 }
 
 function nextLetter() {
@@ -98,7 +85,7 @@ function prevLetter() {
   }
 }
 
-/* FINAL */
+/* final */
 function typeFinal() {
   const text = "Vel...";
   const el = document.getElementById("finalText");
@@ -115,11 +102,11 @@ function typeFinal() {
   type();
 }
 
-/* ambient floating hearts/flowers */
+/* AMBIENT FOREVER SYSTEM */
 function spawnAmbient() {
-  const emojis = ["💖", "🌸", "✨"];
+  const emojis = ["💖", "🌸", "💗", "✨"];
 
-  for (let i = 0; i < 45; i++) {
+  setInterval(() => {
     const el = document.createElement("div");
     el.className = "float";
 
@@ -127,41 +114,22 @@ function spawnAmbient() {
 
     el.style.left = Math.random() * 100 + "vw";
     el.style.top = Math.random() * 100 + "vh";
-    el.style.fontSize = (18 + Math.random() * 24) + "px";
-    el.style.animationDuration = (8 + Math.random() * 10) + "s";
+
+    el.style.fontSize = (18 + Math.random() * 30) + "px";
+    el.style.opacity = 0.6 + Math.random() * 0.4;
+
+    el.style.animationDuration = (10 + Math.random() * 15) + "s";
 
     document.getElementById("bg-effects").appendChild(el);
 
-    setTimeout(() => el.remove(), 30000);
-  }
+    setTimeout(() => {
+      el.remove();
+    }, 40000);
+
+  }, 350);
 }
 
-/* confetti ONCE */
-let confettiDone = false;
-
-function spawnConfettiOnce() {
-  if (confettiDone) return;
-  confettiDone = true;
-
-  for (let i = 0; i < 40; i++) {
-    const el = document.createElement("div");
-    el.className = "float";
-    el.innerHTML = "💖";
-
-    el.style.left = Math.random() * 100 + "vw";
-    el.style.top = Math.random() * 100 + "vh";
-    el.style.fontSize = (18 + Math.random() * 20) + "px";
-
-    document.getElementById("bg-effects").appendChild(el);
-
-    setTimeout(() => el.remove(), 15000);
-  }
-}
-
-/* typing intro */
+/* init */
 window.onload = () => {
   typeIntro();
-
-  const saved = localStorage.getItem("letterIndex");
-  if (saved) current = parseInt(saved);
 };
