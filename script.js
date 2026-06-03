@@ -42,7 +42,8 @@ function goLove() {
 function goLetters() {
   show("letters");
   loadLetter(0);
-  spawnConfetti();
+  spawnAmbient();
+  spawnConfettiOnce();
 }
 
 /* letters */
@@ -52,22 +53,22 @@ const letters = [
 `Brev 2\n\nJeg vet ikke helt hvordan jeg skal si dette.`,
 
 `Brev 3\n\nMen jeg liker deg mer enn jeg burde.`,
-  
-`Brev 4\n\nNoe med deg føles bare riktig.`,
+
+`Brev 4\n\nNoe med deg føles riktig.`,
 
 `Brev 5\n\nJeg tenker på deg ofte.`,
 
-`Brev 6\n\nLitt for ofte kanskje.`,
+`Brev 6\n\nLitt for ofte.`,
 
-`Brev 7\n\nMen det er ikke noe jeg vil stoppe.`,
+`Brev 7\n\nMen jeg vil ikke stoppe.`,
 
-`Brev 8\n\nDu gjør alt litt bedre.`,
+`Brev 8\n\nDu gjør alt bedre.`,
 
 `Brev 9\n\nSelv vanlige dager.`,
 
-`Brev 10\n\nJeg begynner å forstå hva dette er.`,
+`Brev 10\n\nJeg forstår mer nå.`,
 
-`Brev 11\n\nOg jeg vil ikke miste det.`
+`Brev 11\n\nOg jeg vil ikke miste dette.`
 ];
 
 function loadLetter(index) {
@@ -97,7 +98,7 @@ function prevLetter() {
   }
 }
 
-/* final */
+/* FINAL */
 function typeFinal() {
   const text = "Vel...";
   const el = document.getElementById("finalText");
@@ -114,27 +115,50 @@ function typeFinal() {
   type();
 }
 
-/* confetti (simple version) */
-function spawnConfetti() {
+/* ambient floating hearts/flowers */
+function spawnAmbient() {
+  const emojis = ["💖", "🌸", "✨"];
+
+  for (let i = 0; i < 45; i++) {
+    const el = document.createElement("div");
+    el.className = "float";
+
+    el.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+
+    el.style.left = Math.random() * 100 + "vw";
+    el.style.top = Math.random() * 100 + "vh";
+    el.style.fontSize = (18 + Math.random() * 24) + "px";
+    el.style.animationDuration = (8 + Math.random() * 10) + "s";
+
+    document.getElementById("bg-effects").appendChild(el);
+
+    setTimeout(() => el.remove(), 30000);
+  }
+}
+
+/* confetti ONCE */
+let confettiDone = false;
+
+function spawnConfettiOnce() {
+  if (confettiDone) return;
+  confettiDone = true;
+
   for (let i = 0; i < 40; i++) {
     const el = document.createElement("div");
     el.className = "float";
     el.innerHTML = "💖";
+
     el.style.left = Math.random() * 100 + "vw";
-    el.style.animationDuration = 3 + Math.random() * 3 + "s";
+    el.style.top = Math.random() * 100 + "vh";
+    el.style.fontSize = (18 + Math.random() * 20) + "px";
+
     document.getElementById("bg-effects").appendChild(el);
 
-    setTimeout(() => el.remove(), 6000);
+    setTimeout(() => el.remove(), 15000);
   }
 }
 
-/* URL params */
-const params = new URLSearchParams(window.location.search);
-
-if (params.get("hearts")) spawnConfetti();
-if (params.get("love")) document.body.style.filter = "hue-rotate(10deg)";
-
-/* init */
+/* typing intro */
 window.onload = () => {
   typeIntro();
 
