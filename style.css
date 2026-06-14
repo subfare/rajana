@@ -1,35 +1,50 @@
 ```css
-html, body {
+/* ==========================================
+   USE KALAM EVERYWHERE
+========================================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kalam", cursive !important;
+}
+
+html,
+body {
   width: 100%;
   height: 100%;
 }
 
 body {
-  margin: 0;
   overflow: hidden;
-
-  font-family: "Kalam", cursive;
-
   background: linear-gradient(135deg, #ffdde1, #ffb3c1);
-
   font-size: 22px;
 }
 
-/* ambient glow */
+/* Ambient glow */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(255,255,255,0.25), transparent 70%);
+  background: radial-gradient(circle at center,
+      rgba(255, 255, 255, 0.25),
+      transparent 70%);
   pointer-events: none;
 }
 
-/* screens */
+/* ===========================
+   Screens
+=========================== */
+
 .screen {
   display: none;
-  height: 100vh;
   width: 100vw;
+  height: 100vh;
 
+  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -37,7 +52,6 @@ body::before {
   text-align: center;
 
   padding: 60px;
-  box-sizing: border-box;
 
   position: relative;
   z-index: 2;
@@ -47,22 +61,31 @@ body::before {
   display: flex;
 }
 
-/* typography */
-h1, h2 {
-  font-family: "Kalam", cursive;
-  font-weight: 700;
-}
+/* ===========================
+   Typography
+=========================== */
 
 h1 {
   font-size: 120px;
-  margin: 0;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
 h2 {
   font-size: 70px;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
-/* bubbles */
+p {
+  font-size: 28px;
+  line-height: 1.7;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
 .bubble-container {
   display: flex;
   gap: 20px;
@@ -71,18 +94,18 @@ h2 {
 
 .bubble {
   padding: 26px 44px;
+
   font-size: 26px;
 
-  font-family: "Kalam", cursive;
-
-  border-radius: 80px;
   border: none;
+  border-radius: 80px;
+
   cursor: pointer;
 
   background: rgba(255,255,255,0.75);
   backdrop-filter: blur(12px);
 
-  transition: 0.3s;
+  transition: all .3s ease;
 }
 
 .bubble:hover {
@@ -90,65 +113,109 @@ h2 {
 }
 
 .danger {
-  background: rgba(255, 150, 150, 0.7);
+  background: rgba(255,150,150,.7);
 }
 
-/* letters */
+/* ===========================
+   Letter
+=========================== */
+
 .letter-box {
-  background: rgba(255,255,255,0.6);
+  width: 90%;
+  max-width: 1100px;
 
   padding: 80px;
 
-  width: 90%;
-  max-width: 1100px;
+  background: rgba(255,255,255,.60);
 
   border-radius: 25px;
 
   font-size: 28px;
   line-height: 1.8;
-
-  font-family: "Kalam", cursive;
 }
 
-/* nav */
+/* ===========================
+   Navigation
+=========================== */
+
 .nav {
-  margin-top: 30px;
   display: flex;
   justify-content: space-between;
+  margin-top: 30px;
 }
 
 .nav button {
-  font-family: "Kalam", cursive;
+  padding: 15px 30px;
+
+  border: none;
+  border-radius: 50px;
+
+  background: white;
+
+  cursor: pointer;
+
+  transition: .3s;
 }
 
-/* final */
+.nav button:hover {
+  transform: scale(1.08);
+}
+
+/* ===========================
+   Final
+=========================== */
+
 .photo-placeholder {
   margin-top: 30px;
   padding: 50px;
   border: 2px dashed white;
+  border-radius: 20px;
 }
 
-/* background */
+/* ===========================
+   Background
+=========================== */
+
 #bg-effects {
   position: fixed;
   inset: 0;
+
   overflow: hidden;
+
   pointer-events: none;
+
   z-index: 0;
 }
 
-/* floating objects */
+/* Floating decorations */
+
 .float {
   position: absolute;
+  opacity: .8;
   animation: drift 12s ease-in-out infinite;
-  opacity: 0.8;
 }
 
 @keyframes drift {
-  0% { transform: translate(0,0) rotate(0deg); }
-  25% { transform: translate(20px,-30px) rotate(10deg); }
-  50% { transform: translate(-20px,-60px) rotate(-10deg); }
-  75% { transform: translate(10px,-30px) rotate(5deg); }
-  100% { transform: translate(0,0) rotate(0deg); }
+
+  0% {
+    transform: translate(0,0) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(20px,-30px) rotate(10deg);
+  }
+
+  50% {
+    transform: translate(-20px,-60px) rotate(-10deg);
+  }
+
+  75% {
+    transform: translate(10px,-30px) rotate(5deg);
+  }
+
+  100% {
+    transform: translate(0,0) rotate(0deg);
+  }
+
 }
 ```
