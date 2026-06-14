@@ -1,3 +1,4 @@
+```css
 html, body {
   width: 100%;
   height: 100%;
@@ -7,7 +8,7 @@ body {
   margin: 0;
   overflow: hidden;
 
-  font-family: "Quicksand", sans-serif;
+  font-family: "Kalam", cursive;
 
   background: linear-gradient(135deg, #ffdde1, #ffb3c1);
 
@@ -48,8 +49,8 @@ body::before {
 
 /* typography */
 h1, h2 {
-  font-family: "Changa One", sans-serif;
-  font-weight: 400;
+  font-family: "Kalam", cursive;
+  font-weight: 700;
 }
 
 h1 {
@@ -71,6 +72,8 @@ h2 {
 .bubble {
   padding: 26px 44px;
   font-size: 26px;
+
+  font-family: "Kalam", cursive;
 
   border-radius: 80px;
   border: none;
@@ -103,6 +106,8 @@ h2 {
 
   font-size: 28px;
   line-height: 1.8;
+
+  font-family: "Kalam", cursive;
 }
 
 /* nav */
@@ -110,6 +115,10 @@ h2 {
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
+}
+
+.nav button {
+  font-family: "Kalam", cursive;
 }
 
 /* final */
@@ -142,3 +151,4 @@ h2 {
   75% { transform: translate(10px,-30px) rotate(5deg); }
   100% { transform: translate(0,0) rotate(0deg); }
 }
+```
