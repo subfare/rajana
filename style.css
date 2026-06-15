@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap");
 
 html,
 body {
@@ -8,42 +8,49 @@ body {
   padding: 0;
 }
 
-* {
-  box-sizing: border-box;
-  font-family: "Kalam", cursive !important;
+html {
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffdde1, #ffb3c1);
 }
 
 body {
   overflow: hidden;
   background: linear-gradient(135deg, #ffdde1, #ffb3c1);
+  font-family: "Kalam", cursive !important;
   font-size: 22px;
 }
 
-/* ambient glow */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Kalam", cursive !important;
+}
+
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   background: radial-gradient(circle at center, rgba(255,255,255,0.25), transparent 70%);
   pointer-events: none;
+  z-index: 1;
 }
 
-/* screens */
 .screen {
   display: none;
-  height: 100vh;
-  width: 100vw;
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
 
   align-items: center;
   justify-content: center;
   flex-direction: column;
 
   text-align: center;
-
   padding: 60px;
-  box-sizing: border-box;
 
-  position: relative;
   z-index: 2;
 }
 
@@ -51,37 +58,34 @@ body::before {
   display: flex;
 }
 
-/* typography */
-h1,
-h2 {
-  font-family: "Kalam", cursive !important;
-  font-weight: 700;
-  text-align: center;
-}
-
 h1 {
+  font-family: "Kalam", cursive !important;
   font-size: 120px;
+  font-weight: 700;
   margin: 0;
   line-height: 1.1;
 }
 
 h2 {
+  font-family: "Kalam", cursive !important;
   font-size: 70px;
+  font-weight: 700;
   margin: 0 0 20px;
   line-height: 1.1;
 }
 
-p {
+p,
+button {
   font-family: "Kalam", cursive !important;
 }
 
-/* bubbles */
 .bubble-container {
   display: flex;
-  gap: 20px;
-  margin-top: 40px;
   justify-content: center;
   align-items: center;
+  gap: 20px;
+
+  margin-top: 40px;
 }
 
 .bubble {
@@ -106,7 +110,6 @@ p {
   background: rgba(255, 150, 150, 0.7);
 }
 
-/* letters */
 .letter-box {
   background: rgba(255,255,255,0.6);
 
@@ -127,7 +130,6 @@ p {
   white-space: pre-line;
 }
 
-/* nav */
 .nav {
   margin-top: 30px;
   display: flex;
@@ -152,7 +154,6 @@ p {
   transform: scale(1.08);
 }
 
-/* final */
 .photo-placeholder {
   margin-top: 30px;
   padding: 50px;
@@ -161,7 +162,6 @@ p {
   text-align: center;
 }
 
-/* background */
 #bg-effects {
   position: fixed;
   inset: 0;
@@ -170,7 +170,6 @@ p {
   z-index: 0;
 }
 
-/* floating objects */
 .float {
   position: absolute;
   animation: drift 12s ease-in-out infinite;
@@ -184,4 +183,3 @@ p {
   75% { transform: translate(10px,-30px) rotate(5deg); }
   100% { transform: translate(0,0) rotate(0deg); }
 }
-```
