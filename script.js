@@ -1,4 +1,6 @@
+```js
 let current = 0;
+let ambientStarted = false;
 
 const screens = {
   intro: document.getElementById("intro"),
@@ -15,13 +17,14 @@ function show(screen) {
 
 /* typing intro */
 const introText = "Hei Rajana";
-let i = 0;
+let introIndex = 0;
 
 function typeIntro() {
   const el = document.getElementById("typeText");
-  if (i < introText.length) {
-    el.innerHTML += introText[i];
-    i++;
+
+  if (introIndex < introText.length) {
+    el.innerHTML += introText[introIndex];
+    introIndex++;
     setTimeout(typeIntro, 120);
   }
 }
@@ -32,7 +35,10 @@ function goFail() {
 }
 
 function restart() {
+  introIndex = 0;
+  document.getElementById("typeText").innerHTML = "";
   show("intro");
+  typeIntro();
 }
 
 function goLove() {
@@ -47,17 +53,17 @@ function goLetters() {
 
 /* letters */
 const letters = [
-`Brev 1\n\nDette er starten på alt.`,
-`Brev 2\n\nJeg vet ikke helt hvordan jeg skal si dette.`,
-`Brev 3\n\nMen jeg liker deg mer enn jeg burde.`,
-`Brev 4\n\nNoe med deg føles riktig.`,
-`Brev 5\n\nJeg tenker på deg ofte.`,
-`Brev 6\n\nLitt for ofte.`,
-`Brev 7\n\nMen jeg vil ikke stoppe.`,
-`Brev 8\n\nDu gjør alt bedre.`,
-`Brev 9\n\nSelv vanlige dager.`,
-`Brev 10\n\nJeg forstår mer nå.`,
-`Brev 11\n\nOg jeg vil ikke miste dette.`
+  `Brev 1\n\nDette er starten på alt.`,
+  `Brev 2\n\nJeg vet ikke helt hvordan jeg skal si dette.`,
+  `Brev 3\n\nMen jeg liker deg mer enn jeg burde.`,
+  `Brev 4\n\nNoe med deg føles riktig.`,
+  `Brev 5\n\nJeg tenker på deg ofte.`,
+  `Brev 6\n\nLitt for ofte.`,
+  `Brev 7\n\nMen jeg vil ikke stoppe.`,
+  `Brev 8\n\nDu gjør alt bedre.`,
+  `Brev 9\n\nSelv vanlige dager.`,
+  `Brev 10\n\nJeg forstår mer nå.`,
+  `Brev 11\n\nOg jeg vil ikke miste dette.`
 ];
 
 function loadLetter(index) {
@@ -89,12 +95,15 @@ function prevLetter() {
 function typeFinal() {
   const text = "Vel...";
   const el = document.getElementById("finalText");
-  let i = 0;
+
+  el.innerHTML = "";
+
+  let finalIndex = 0;
 
   function type() {
-    if (i < text.length) {
-      el.innerHTML += text[i];
-      i++;
+    if (finalIndex < text.length) {
+      el.innerHTML += text[finalIndex];
+      finalIndex++;
       setTimeout(type, 150);
     }
   }
@@ -102,8 +111,11 @@ function typeFinal() {
   type();
 }
 
-/* AMBIENT FOREVER SYSTEM */
+/* ambient forever system */
 function spawnAmbient() {
+  if (ambientStarted) return;
+  ambientStarted = true;
+
   const emojis = ["💖", "🌸", "💗", "✨"];
 
   setInterval(() => {
@@ -114,22 +126,22 @@ function spawnAmbient() {
 
     el.style.left = Math.random() * 100 + "vw";
     el.style.top = Math.random() * 100 + "vh";
-
     el.style.fontSize = (18 + Math.random() * 30) + "px";
     el.style.opacity = 0.6 + Math.random() * 0.4;
-
     el.style.animationDuration = (10 + Math.random() * 15) + "s";
+    el.style.fontFamily = '"Kalam", cursive';
 
     document.getElementById("bg-effects").appendChild(el);
 
     setTimeout(() => {
       el.remove();
     }, 40000);
-
   }, 350);
 }
 
 /* init */
 window.onload = () => {
+  document.body.style.fontFamily = '"Kalam", cursive';
   typeIntro();
 };
+```
