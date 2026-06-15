@@ -1,4 +1,3 @@
-```js
 let current = 0;
 let ambientStarted = false;
 
@@ -144,4 +143,3 @@ window.onload = () => {
   document.body.style.fontFamily = '"Kalam", cursive';
   typeIntro();
 };
-```
