@@ -52,7 +52,7 @@ function goLetters() {
 
 /* letters */
 const letters = [
-  `før jeg møtte deg trodde jeg egentlig at jeg hadde null interesse i å slippe nye folk inn i mitt liv på den måten, jeg var ikke helt klar over hva jeg ville og jeg stolte ikke på nye folk som kunne påvirket meg på noe som helst måte`,
+  `#1\n\nfør jeg møtte deg trodde jeg egentlig at jeg hadde null interesse i å slippe nye folk inn i mitt liv på den måten, jeg var ikke helt klar over hva jeg ville og jeg stolte ikke på nye folk som kunne påvirket meg på noe som helst måte`,
   `Brev 2\n\nJeg vet ikke helt hvordan jeg skal si dette.`,
   `Brev 3\n\nMen jeg liker deg mer enn jeg burde.`,
   `Brev 4\n\nNoe med deg føles riktig.`,
