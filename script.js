@@ -96,7 +96,7 @@ function prevLetter() {
 
 /* final */
 function typeFinal() {
-  const text = "Vel...";
+  const text = "jeg elsker deg så mye, og vil at du skal være min";
   const el = document.getElementById("finalText");
 
   el.innerHTML = "";
