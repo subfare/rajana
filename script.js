@@ -54,7 +54,9 @@ function goLetters() {
 const letters = [
   `#1\n\nfør jeg møtte deg trodde jeg egentlig at jeg hadde null interesse i å slippe nye folk inn i mitt liv på den måten, jeg var ikke helt klar over hva jeg ville og jeg stolte ikke på nye folk som kunne påvirket meg på noe som helst måte`,
   `#2\n\ndu har vist meg at dette var feil måte å tenke på, du  har fått meg til å glede meg til de små tingene igjen som for eksempel bare kan være å sitte ved sidenav deg eller sitte å høre på deg snakke - du er den som har gjort hverdagen min lettere uten at du engang trenger å prøve alltid. du har klart å vise meg noe ingen andre har klart på en helt unik måte og det er trygghet`,
-  `Brev 3\n\nMen jeg liker deg mer enn jeg burde.`,
+  `Brev 3\n\nå være rundt deg føes ut som å være rundt noen som jeg merker at bryr seg om ting jeg har interesse, ting jeg gjør eller bare ting jeg sier, noen som prøver å være observant og noen som tar de tiltakene ingen andre har ville tatt for meg før deg
+
+du er noen jeg har lyst å alltid kunne være rundt og med, og du er noen jeg har klart å gro meg nærmere med og noen jeg har lært meg å kunne like på absolutt alle ulike måter`,
   `Brev 4\n\nNoe med deg føles riktig.`,
   `Brev 5\n\nJeg tenker på deg ofte.`,
   `Brev 6\n\nLitt for ofte.`,
