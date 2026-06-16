@@ -53,7 +53,7 @@ function goLetters() {
 /* letters */
 const letters = [
   `#1\n\nfør jeg møtte deg trodde jeg egentlig at jeg hadde null interesse i å slippe nye folk inn i mitt liv på den måten, jeg var ikke helt klar over hva jeg ville og jeg stolte ikke på nye folk som kunne påvirket meg på noe som helst måte`,
-  `Brev 2\n\nJeg vet ikke helt hvordan jeg skal si dette.`,
+  `#2\n\ndu har vist meg at dette var feil måte å tenke på, du  har fått meg til å glede meg til de små tingene igjen som for eksempel bare kan være å sitte ved sidenav deg eller sitte å høre på deg snakke - du er den som har gjort hverdagen min lettere uten at du engang trenger å prøve alltid. du har klart å vise meg noe ingen andre har klart på en helt unik måte og det er trygghet`,
   `Brev 3\n\nMen jeg liker deg mer enn jeg burde.`,
   `Brev 4\n\nNoe med deg føles riktig.`,
   `Brev 5\n\nJeg tenker på deg ofte.`,
@@ -63,6 +63,8 @@ const letters = [
   `Brev 9\n\nSelv vanlige dager.`,
   `Brev 10\n\nJeg forstår mer nå.`,
   `Brev 11\n\nOg jeg vil ikke miste dette.`
+  `Brev 12\n\nfiller 1.`
+  `Brev 13\n\nfiller 2.`
 ];
 
 function loadLetter(index) {
