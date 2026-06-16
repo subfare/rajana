@@ -72,7 +72,7 @@ function loadLetter(index) {
   document.getElementById("letterText").innerText = letters[index];
 
   document.getElementById("nextBtn").innerText =
-    index === letters.length - 1 ? "Så, hva prøver du å si?" : "Neste →";
+    index === letters.length - 1 ? "sååååå, hva prøver du å si?" : "neste →";
 }
 
 function nextLetter() {
