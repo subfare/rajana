@@ -63,8 +63,6 @@ const letters = [
   `Brev 9\n\nSelv vanlige dager.`,
   `Brev 10\n\nJeg forstår mer nå.`,
   `Brev 11\n\nOg jeg vil ikke miste dette.`
-  `Brev 12\n\nfiller 1.`
-  `Brev 13\n\nfiller 2.`
 ];
 
 function loadLetter(index) {
